@@ -16,9 +16,9 @@
 </head>
 <body>
     <div id="page_header">
-        <div id="header_left"><img src="{% static 'images/cambridge.png' %}"/></div>
-        <div id="header_middle">{% block header_title %}{% endblock %}</div>
-        <div id="header_right"><img src="{% static 'images/cdbb.png' %}"></div>
+        <div id="header_left"><img src="images/cambridge.png"/></div>
+        <div id="header_middle">{{ page.title }}</div>
+        <div id="header_right"><img src="images/cdbb.png"></div>
     </div>
     {{ page.breadcrumbs }}
     {{ content }}
