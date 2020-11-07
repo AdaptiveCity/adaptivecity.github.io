@@ -1,0 +1,18 @@
+---
+layout: default
+title: Systems Research Group People
+---
+
+<div>
+	{% for person in site.people %}
+		<div class="person">
+			<h2>{{ person.name }}</h2>
+            <div class="person_image">
+				<img src="{{ person.image }}"/>
+			</div>
+			<div class="person_content">
+		    {{ person.content | markdownify }}
+			</div>
+        </div> <!-- /person -->
+	{% endfor %}
+</div>
