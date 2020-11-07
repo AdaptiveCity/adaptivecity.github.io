@@ -2,6 +2,7 @@
 
 .person_name {
     color: #c44101;
+    font-size: 18px;
 }
 
 .person_img {
@@ -9,5 +10,5 @@
 }
 
 .person_content {
-    font-size: 12px;
+    font-size: 14px;
 }
