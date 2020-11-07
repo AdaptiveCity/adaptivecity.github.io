@@ -20,7 +20,13 @@
 <link href="people/" rel="Next">
 <link href="../" rel="Up">
 
-<link rel="stylesheet" href="/assets/style/css/{{ page.css }}.css" />
+<!-- From page frontspiece e.g.
+---
+css people
+---
+will load css file /assets/style/css/people.css
+-->
+<link rel="stylesheet" type="text/css" href="/assets/style/css/{{ page.css }}.css" />
 
 <script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
