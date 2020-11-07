@@ -10,7 +10,9 @@
 }
 
 .person_image img {
-    height: 100px;
+    width: auto;
+    height: auto;
+    max-height: 100px;
 }
 
 .person_content {
