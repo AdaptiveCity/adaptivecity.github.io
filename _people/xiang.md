@@ -1,7 +1,7 @@
 ---
 name: Xiang Xie
-office: somewhere in IfM
-phone: dunno
+office: IfM
+phone: +44(0)1223 765609
 image: assets/images/Xiang.jpg
 ---
 
