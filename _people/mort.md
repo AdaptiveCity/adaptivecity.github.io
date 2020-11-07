@@ -3,6 +3,7 @@ name: Professor Mort
 office: FN17
 phone: (3)34419
 image: assets/images/mort.jpg
+homepage: mort.io
 ---
 
 Richard Mortier returned to the Computer Laboratory in 2015, having spent time at Sprint ATL, Microsoft
