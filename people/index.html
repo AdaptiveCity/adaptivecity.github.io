@@ -4,15 +4,21 @@ title: Systems Research Group People
 ---
 
 <div>
+    <table>
 	{% for person in site.people %}
-		<div class="person">
-			<h2>{{ person.name }}</h2>
-            <div class="person_image">
+		<tr class="person">
+            <td colspan=2>
+			  <div class="person_name">{{ person.name }}</div>
+            </td>
+        </tr>
+        <tr>
+            <td class="person_image">
 				<img src="{{ person.image }}"/>
-			</div>
-			<div class="person_content">
-		    {{ person.content | markdownify }}
-			</div>
-        </div> <!-- /person -->
+			</td>
+			<td class="person_content">
+		        {{ person.content | markdownify }}
+			</td>
+        </tr> <!-- /person -->
 	{% endfor %}
+    </table>
 </div>

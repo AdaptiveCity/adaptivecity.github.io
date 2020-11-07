@@ -1,13 +1,13 @@
 <!-- CSS style for the 'people/members' page -->
 
-.person_block {
-    width: 80%;
+.person_name {
+    color: orange;
 }
 
-.person_img { 
-    display: inline-block;
+.person_img {
+    padding: 4px;
 }
 
 .person_content {
-    display: inline_block;
+    font-size: 12px;
 }
