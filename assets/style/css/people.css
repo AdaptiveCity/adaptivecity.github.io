@@ -9,6 +9,10 @@
     padding: 4px;
 }
 
+.person_img img {
+    height: 100px;
+}
+
 .person_content {
     font-size: 14px;
 }
