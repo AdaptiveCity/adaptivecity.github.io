@@ -3,6 +3,7 @@ name: Ian Lewis
 office: FE11
 phone: (3)31859
 image: assets/images/ijl20.jpg
+homepage: https://www.cl.cam.ac.uk/~ijl20
 ---
 
 Ian Lewis is Director of the Adaptive Cities Programme in the Computer Laboratory. His research interests
