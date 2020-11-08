@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AdaptiveCity / CDBB Digital Twin
+title: Home
 ---
 
 <p>
@@ -29,19 +29,30 @@ infrastructure. Incoming real-time data must be interpreted and analyzed such th
 derived events can be recognized promptly and timely actions taken.
 </p>
 
-<h2><i>time</i>, <i>timeliness</i> and <i>real-time</i> data processing.</h2>
+<h2><i>Time</i>, <i>timeliness</i> and <i>real-time</i> data processing.</h2>
 
-<p>A few definitions are worthwhile:</p>
+<p>These concepts are central to the work that we are doing to the extent that a large body of our work is concerned with managing effectively the
+spatial and temporal data associated with urban and in-building data. Note this contrasts with work that will result in a single heatmap of NO2 in a city,
+derived from only 10 sensors with the data collected over a period of a month. Prompt recognition of spatio-temporal patterns in heterogeneous sensor
+data requires careful consideration of the space and time coordinates, particularly when the 'sensors' are moving around. </p>
 
 <dl>
-    <dt>time</dt>
-    <dd>ticking away, moments that make up a dull day.
+    <dt>Time</dt>
+    <dd>Ticking away, the moments that make up a dull day.[<a href="https://www.youtube.com/watch?v=JwYX52BP2Sk&t=132s">ref</a>] We attach timestamps
+     to our data at the earliest opportunity and continue to add timestamps at other steps in the processing. One timestamp is more important than all the 
+     others, i.e. <i>the time most sensibly associated with the sensor reading</i>, and we give this the name <tt>acp_ts</tt>. There will be multiple other
+     times that will be relevant for most sensors, e.g. for our CNN camera <a href="https://github.com/AdaptiveCity/deepdish">DeepDish</a> there will be
+     a time the image was taken, the time the object detection produced the count, the time the data was sent from the sensor, the time it arrived at our
+     platform, and so on. In this case we would deem the time the picture was taken most appropriate for <tt>acp_ts</ts>. In due course a higher-level program
+     may decide the multiple DeepDish counts of people from spatially neighboring sensors are sufficient to raise a Covid proximity warning, and that
+     warning becomes its own 'reading' (we would use the word 'event') flowing through the system with its own <tt>acp_ts</ts>. The relationship between these
+     timestamps itself becomes of significant interest.
     </dd>
 
-    <dt>timeliness</dt>
+    <dt>Timeliness</dt>
     <dd><p>This concept combines three factors:</p>
         <ul>
-            <li>The a natural period over which sensor readings could be considered relevant
+            <li>The natural period over which sensor readings could be considered relevant
                 for a decision or action to be taken. </li>
             <li>The urgency with which a decision <i>should</i> be taken, e.g. to warn of a
                 car crash or school shooting. </li>
@@ -50,10 +61,15 @@ derived events can be recognized promptly and timely actions taken.
                 time to generate a reading or a system may take a while to decide that occupants
                 of a building are not behaving 'normally'.</li>
         </ul>
+        <p>In summary, the timeliness required in analysing and acting upon sensor data is an important property and
+         the work we do targets timescales of seconds or less. We do not assume simple analysis of readings from a single
+         sensor or indeed sensors of a single type, rather an action may be based upon a cumulative recent history of
+         sensor readings from a diverse set of sensors resulting in an action such as "close the highway".
+        </p>
         <p>In this context the difference between <i>planning</i>
         and <i>action</i> needs to be considered. For example you can collect pollution levels
-        in New Delhi and analyze that ten years later (in an actual paper from 2018) and still
-        produce useful information that will aid the planning process for that city. However, our
+        for a city and analyze that ten years later and still
+        produce useful information that will aid the planning process for that city. In contrast, our
         experience with bus position data around Cambridge UK is that after the information is a few
         seconds old there is little practical use for it. We derive, in real-time, road speed information
         from the position reports of the buses - this information has been of interest to people
@@ -61,9 +77,46 @@ derived events can be recognized promptly and timely actions taken.
         100 researchers, but the relative interest in the historic <i>position</i> of any bus is
         extremely limited (to those working on bus position analysis systems who don't have their
         own real-time platform).
+        </p>
+     
+    <dt>Real-time data</dt>
+    <dd><p>This is the data flowing 'live' through our platform, through the real-time analytics and pattern recognition,
+        to the visualisation tools and actuators that affect the infrastructure. The data that has been stored ceases to
+        be 'real-time'.
+    </dd>
+    
+    <dt>Time-series data</dt>
+    <dd><p>This is the simple process of associating a time with a data value, such as most sensor data. Data stored
+        in a database is considered by us to be 'historical' data although still potentially useful in analysing the
+        real-time data. Using a time-series database particularly suited to time/value
+        datasets typically speeds up queries using temporal parameters but should not be confused with a 'real-time'
+        platform although reference to this historical data may well help inform pattern recognition on the real-time
+        data flowing through our platform. The fact that real-time data pouring into a time-series database will 
+        have the effect that the database will contain the latest sensor data values does not make the time-series
+        database a real-time platform.
+        </p>
+        
+    <dt>Asynchronous support</dt>
+    <dd><p>Somewhat late to the party, programming languages are adding 'async' features (e.g.
+        <a href="https://docs.python.org/3/library/asyncio.html">Python</a>) that assist in handling inherently asynchronous sensor
+        data in a more efficient way both from the clarity of the programming and the efficiency of the code. The core of the
+        Adaptive City Platform is implemented with <a href="https://www.youtube.com/watch?v=rvmRzDpZXGQ">Java/Vertx</a>.
+        </p>
+        
+    <dt>Stream processing</td>
+    <dd><p>This is essentially what we are doing with <a href="https://vertx.io/">Eclipse Vertx</a>, which is a combination of asynchronous
+        programming support (in Java) with a data publish/subscribe mechanism called the EventBus. 
+        <a href="http://storm.apache.org/">Apache Storm</a> and <a href="https://kafka.apache.org/">Apache Kafka</a> have gained
+        popular support in the past couple of years both of which have the 'real-time' characteristic that data is <i>pushed</i> through
+        the system. Beyond that common characteristic, the available 'stream processing' platforms differ significantly in their approach
+        particularly with regard to guaranteeing delivery of data and managing what is in effect a committed transaction log. For urban and
+        in-building sensor data processing it is helpful to have a lightweight but low-latency system, recognizing that sensor data is inherently
+        unreliable and in the event of a temporary outage it often preferable to start back up immediately with new incoming data rather than
+        delay that by pumping through older sensor readings which are now less important.
+        </p>
 </dl>
 
-<h2>Sensor network</h2>
+<h2>Sensor network sensor nodes, and intelligent sensors</h2>
 
 <img src="/assets/images/acp_local_mqtt.png" />
 
