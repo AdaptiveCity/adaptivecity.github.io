@@ -1,151 +1,84 @@
 ---
 layout: default
-title: Systems Research Group
+title: AdaptiveCity / CDBB Digital Twin
 ---
+
 <p>
-  Systems is one of the largest and longest standing research areas in the
-  Computer Laboratory, covering hardware, communications hardware and
-  software, operating systems and distributed systems. Systems
-  developed here include:
+Our work involves the collection and analysis of historical and real-time sensor data from within an urban
+region (working with <a href="https://smartcambridge.org/">SmartCambridge</a>)
+ and technically similar work for in-building sensor data and
+building management (working with the
+<a href="https://www.cdbb.cam.ac.uk/">Center for Digital Built Britain</a>
+).
+</p>
+<p>
+Within Cambridge, this work involves a close collaboration between
+<a href="https://www.cst.cam.ac.uk">the Department of Computer Science and Technology</a>
+ and <a href="https://www.ifm.eng.cam.ac.uk">the Institute for Manufacturing</a>.
 </p>
 
-<dl>
-
-  <dt>2020s</dt>
-  <dd>
-  the <a href="https://github.com/AdaptiveCity/acp_server/blob/master/README.md">Adaptive City Platform</a> real-time
-    urban/in-building sensor data analysis.
-  </dd>
-
-  <dt>2010s</dt>
-  <dd>
-    the <a href="https://mirage.io/">Mirage unikernel system</a>,
-    the <a href="https://ocaml.xyz/">Owl scientific computing system</a>,
-    the <a href="https://github.com/me-box/databox/">Databox</a> personal
-    information management system.
-  </dd>
-
-  <dt>2000s</dt>
-  <dd>
-    the <a href="https://xen.org/">Xen hypervisor</a> (enabling commodity
-    x86 virtualisation and the creation of cloud computing), the
-    <a href="netos/projects/archive/han/">Home Area Network</a>, the
-    <a href="https://netfpga.org/">NetFPGA</a> (an open source hardware and
-    software platform for high-speed, hardware-accelerated networking
-    systems).
-  </dd>
-
-  <dt>1990s</dt>
-  <dd>
-    the <a href="fairpap.html">Fairisle ATM LAN</a>, the
-    <a href="https://doi.org/10.1145/382258.382788">Pandora</a> multimedia
-    workstation environment,
-    <a href="netos/projects/archive/dan.html">Desk Area Network</a> (a
-    disaggregated computer where memory, CPU, display and other peripherals
-    interconnect over an ATM LAN), the DCAN
-    <a href="netos/projects/archive/dcan/">Tempest</a> network control
-    environment (an early form of software defined networking), the
-    <a href="netos/projects/archive/nemesis/">Nemesis</a> Operating System
-    (with principles, for managing realtime continuous media).
-  </dd>
-
-  <dt>1980s</dt>
-  <dd>
-    the <a href="https://en.wikipedia.org/wiki/Cambridge_Distributed_Computing_System">Cambridge
-    Distributed Computing System</a> (an early distributed operating system),
-    the <a href="https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-117.html">Mayflower</a>
-    project (a distributed operating system in a high-level language),
-    the <a href="https://doi.org/10.1016/0011-684X(83)90080-1">UNIVERSE</a>
-    and <a href="https://doi.org/10.1016/0140-3664(86)90016-2">UNISON</a> networks
-    (interconnecting Cambridge Distributed
-    Computer Systems over Cambridge Rings and Fast Rings linked via
-    satellite and wide-bandwidth terrestrial links).
-  </dd>
-
-  <dt>1970s</dt>
-  <dd>
-    the <a href="https://en.wikipedia.org/wiki/Cambridge_Ring_(computer_network)">Cambridge Ring</a> (and sucessors the Fast Ring and Backbone Ring),
-    the <a href="https://en.wikipedia.org/wiki/CAP_computer">CAP Computer</a>
-    (the first successful experimental computer demonstrating use of security
-    capabilities in hardware and software), the <a href="https://en.wikipedia.org/wiki/TRIPOS">TRIPOS</a>
-    operating system (a portable operating system that became AmigaDOS;
-    still in use!).
-  </dd>
-
-  <dt>1960s</dt>
-  <dd>
-    the <a href="https://en.wikipedia.org/wiki/Titan_(1963_computer)">Titan
-    Supervisor</a> (an early multi-user time-sharing operating system and
-    arguably the world's first commercially sold time-sharing OS).
-  </dd>
-
-  <dt>1940s/50s</dt>
-  <dd>
-    the <a href="https://en.wikipedia.org/wiki/EDSAC">EDSAC</a> (one of the
-    first two "<a href="https://en.wikipedia.org/wiki/History_of_computing_hardware#EDSAC">usefully
-    operational electronic digital stored-program computers</a>"), the <a href="https://en.wikipedia.org/wiki/EDSAC_2">EDSAC 2</a> (the
-    first full-scale microprogrammed computer).
-  </dd>
-
-</dl>
-
-<p><strong>
-  These pages are in the process of being updated. Details of ongoing
-  research, student projects, and the like will be added here in due course.
-  Until then, the most recent capture of such information will be on the
-  <a href="netos/">NetOS</a> pages.
-</strong></p>
-
-
-
-
-<h2>Subdivision &amp; Reformation</h2>
 <p>
-  The SRG occasionally spontaneously subdivides and reforms, a process which
-  sometimes results in other research groups spinning out. Recent subgroups
-  that are now largely dormant include:
+Hopefully, it is sufficiently clear from the design of our platform and all the documentation
+included with every project that we care about <b>time</b> and <b>timeliness</b> a great deal. Where
+the vast majority of sensor deployment projects simply collect and store the data for subsequent
+processing (e.g. deploy some NO2 sensors in a city, collect the data over a few months, analyze the
+collected information to produce a great paper) that is <i>categorically</i> not the approach taken in
+our research. We are planning for the cities and buildings of the future requiring a
+significant autonomy of operation and the sensors represent the eyes and ears of that intelligent
+infrastructure. Incoming real-time data must be interpreted and analyzed such that patterns and
+derived events can be recognized promptly and timely actions taken.
 </p>
 
+<h2><i>time</i>, <i>timeliness</i> and <i>real-time</i> data processing.</h2>
+
+<p>A few definitions are worthwhile:</p>
+
 <dl>
+    <dt>time</dt>
+    <dd>ticking away, moments that make up a dull day.
+    </dd>
 
-  <dt><a href="netos/">Networks and Operating Systems</a></dt>
-  <dd>
-    <a href="netos/papers/">Publications</a>,
-    <a href="netos/people/">People</a>,
-    <a href="netos/projects/">Projects</a>
-    <p></p>
-  </dd>
-
-  <dt><a href="opera/">Opera</a></dt>
-  <dd>
-    <a href="opera/publications/">Publications</a>,
-    <a href="opera/people/">People</a>,
-    <a href="opera/projects/">Projects</a>
-
-    <p>
-      The name was chosen to have a multimedia feel and the mnemonic may be
-      expanded to &#8220;objects, persistence, events, replication and activity&#8221;.
-      The thrust is open distributed processing with an object orientated
-      approach. We look to support emerging distributed applications in
-      which users and devices may be mobile and may have multimedia
-      presentation requirements. Current themes are asynchronous (event)
-      extensions to synchronous middleware and an access control
-      architecture, Oasis. The projects and publications links below lead
-      to fuller information about this and other work in the group.
-    </p>
-  </dd>
-
-  <dt><a href="han/">Home Area Networking</a></dt>
-  <dd>
-    <p></p>
-  </dd>
-
-  <dt>Open Media Group</dt>
-  <dd>
-    <p>
-      Now part of the
-      <a href="/research/dtg/">Digital Technology Group (DTG)</a>.
-    </p>
-  </dd>
-
+    <dt>timeliness</dt>
+    <dd><p>This concept combines three factors:</p>
+        <ul>
+            <li>The a natural period over which sensor readings could be considered relevant
+                for a decision or action to be taken. </li>
+            <li>The urgency with which a decision <i>should</i> be taken, e.g. to warn of a
+                car crash or school shooting. </li>
+            <li>The natural time taken for a reading to be collected or event to be recognized.
+                For example a device measuring gas concentration make take a certain amount of
+                time to generate a reading or a system may take a while to decide that occupants
+                of a building are not behaving 'normally'.</li>
+        </ul>
+        <p>In this context the difference between <i>planning</i>
+        and <i>action</i> needs to be considered. For example you can collect pollution levels
+        in New Delhi and analyze that ten years later (in an actual paper from 2018) and still
+        produce useful information that will aid the planning process for that city. However, our
+        experience with bus position data around Cambridge UK is that after the information is a few
+        seconds old there is little practical use for it. We derive, in real-time, road speed information
+        from the position reports of the buses - this information has been of interest to people
+        analyzing traffic in the Cambridge region for several years and been distributed to over
+        100 researchers, but the relative interest in the historic <i>position</i> of any bus is
+        extremely limited (to those working on bus position analysis systems who don't have their
+        own real-time platform).
 </dl>
+
+<h2>Sensor network</h2>
+
+<img src="/assets/images/acp_local_mqtt.png" />
+
+<h2>Data architecture</h2>
+
+<h2>Platform architecture</h2>
+
+<img src="/assets/images/acp_server.png"/>
+
+<h2>Visualisation</h2>
+
+<img src="/assets/images/acp_web_time.png"/>
+
+<h2>Analysis</h2>
+
+<img src="/assets/images/voronoi.png"/>
+
+<h2>Privacy</h2>
