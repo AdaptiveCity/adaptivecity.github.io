@@ -23,7 +23,9 @@ included with every project that we care about <b>time</b> and <b>timeliness</b>
 the vast majority of sensor deployment projects simply collect and store the data for subsequent
 processing (e.g. deploy some NO2 sensors in a city, collect the data over a few months, analyze the
 collected information to produce a great paper) that is <i>categorically</i> not the approach taken in
-our research. We are planning for the cities and buildings of the future requiring a
+our research. 
+</p>
+<p>We are planning for the cities and buildings of the future requiring a
 significant autonomy of operation and the sensors represent the eyes and ears of that intelligent
 infrastructure. Incoming real-time data must be interpreted and analyzed such that patterns and
 derived events can be recognized promptly and timely actions taken.
@@ -38,12 +40,16 @@ data requires careful consideration of the space and time coordinates, particula
 
 <dl>
     <dt>Time</dt>
-    <dd>Ticking away, the moments that make up a dull day.[<a href="https://www.youtube.com/watch?v=JwYX52BP2Sk&t=132s">ref</a>] We attach timestamps
+    <dd><p>Ticking away, the moments that make up a dull day.[<a href="https://www.youtube.com/watch?v=JwYX52BP2Sk&t=132s">ref</a>]
+     </p>
+     <p>We attach timestamps
      to our data at the earliest opportunity and continue to add timestamps at other steps in the processing. One timestamp is more important than all the 
      others, i.e. <i>the time most sensibly associated with the sensor reading</i>, and we give this the name <tt>acp_ts</tt>. There will be multiple other
      times that will be relevant for most sensors, e.g. for our CNN camera <a href="https://github.com/AdaptiveCity/deepdish">DeepDish</a> there will be
      a time the image was taken, the time the object detection produced the count, the time the data was sent from the sensor, the time it arrived at our
-     platform, and so on. In this case we would deem the time the picture was taken most appropriate for <tt>acp_ts</ts>. In due course a higher-level program
+     platform, and so on. In this case we would deem the time the picture was taken most appropriate for <tt>acp_ts</tt>. 
+     </p>
+     <p>In due course a higher-level program
      may decide the multiple DeepDish counts of people from spatially neighboring sensors are sufficient to raise a Covid proximity warning, and that
      warning becomes its own 'reading' (we would use the word 'event') flowing through the system with its own <tt>acp_ts</ts>. The relationship between these
      timestamps itself becomes of significant interest.
