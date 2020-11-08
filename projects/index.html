@@ -1,0 +1,28 @@
+---
+layout: default
+title: Projects
+css: projects
+---
+
+<div>
+<ul class="projects">
+
+{% for project in site.projects %}
+
+      <li class="project">
+        <div class="logo">
+          <a href="{{ project.link }}">
+            <div class="title">{{ project.title }}</div>
+            <img alt="{{ project.title }}" src="{{ project.image }}">
+          </a>
+        </div>
+        <div class="contact">
+            <a href="{{ project.contact_link }}">{{ project.contact_name }}</a>
+        </div>
+        <p class="description">
+		        {{ project.content | markdownify }}
+        </p>
+      </li>
+{% endfor %}
+</ul>
+</div>
