@@ -1,2 +1,4 @@
 # adaptivecity.github.io
-AdaptiveCity web content
+
+This is the Git repo for [our online web content](https://adaptivecity.github.io)
+
