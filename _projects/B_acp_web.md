@@ -3,7 +3,7 @@ title: ACP Web
 link: https://github.com/AdaptiveCity/acp_web
 contact_name: Ian Lewis
 contact_link: https://www.cl.cam.ac.uk/~ijl20
-image: assets/images/github.png
+image: github.png
 ---
 
 acp_web is the 'http' interface to the Adaptive City Platform supporting

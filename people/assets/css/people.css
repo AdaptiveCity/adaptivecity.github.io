@@ -8,6 +8,7 @@
 .person_image {
     padding: 4px;
     text-align: center;
+    vertical-align: middle;
 }
 
 .person_image img {

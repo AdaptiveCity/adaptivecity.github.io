@@ -2,7 +2,7 @@
 name: Rob Bricheno
 office: UIS
 phone: (3)34709
-image: assets/images/rwhb2.jpeg
+image: rwhb2.jpeg
 homepage: https://rwhb.me/
 ---
 

@@ -18,7 +18,7 @@ unused at the moment. See example:
 name: Ian Lewis
 office: FE11
 phone: (3)31859
-image: assets/images/ijl20.jpg
+image: ijl20.jpg
 homepage: https://www.cl.cam.ac.uk/~ijl20
 ---
 
@@ -35,7 +35,7 @@ Same routine as for People, just difference directories.
 
 Reuse or put a portrait image into directory `_projects/images`.
 
-In directory `_projects`, create a new file `<INITIAL>_<yourname>.md` or `<INITIAL>_<yourname>.hmtl` where
+In directory `_projects`, create a new file `<INITIAL>_<newproject>.md` or `<INITIAL>_<newproject>.hmtl`
 as with Person above, e.g.:
 
 ```
@@ -44,7 +44,7 @@ title: ACP Web
 link: https://github.com/AdaptiveCity/acp_web
 contact_name: Ian Lewis
 contact_link: https://www.cl.cam.ac.uk/~ijl20
-image: assets/images/github.png
+image: github.png
 ---
 
 Provides the 'http' interface to the Adaptive City Platform supporting

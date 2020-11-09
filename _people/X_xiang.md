@@ -2,7 +2,7 @@
 name: Xiang Xie
 office: IfM
 phone: +44(0)1223 765609
-image: assets/images/Xiang.jpg
+image: Xiang.jpg
 ---
 
 Dr Xiang Xie is a Research Associate in DIAL, who is conducting researches related to the Digital Twins

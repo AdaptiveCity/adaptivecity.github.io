@@ -8,7 +8,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
   <link rel="shortcut icon" href="/favicon.ico">
 
   <link rel="stylesheet" href="/assets/style/ucam2012/full-stylesheet.css">
@@ -20,13 +19,14 @@
 <link href="people/" rel="Next">
 <link href="../" rel="Up">
 
+    <link rel="stylesheet" type="text/css" href="/assets/style/css/main.css" />
+    
 {% if page.css %}
     <!-- From page frontspiece css variable (optional) e.g.
-    ---
-    css: people
-    ---
-    will load css file /assets/style/css/people.css
+        ---
+        css: people
+        ---
     -->
-    <link rel="stylesheet" type="text/css" href="/assets/style/css/{{ page.css }}.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/{{ page.css }}.css" />
 {% endif %}
 <!-- end default_head.html -->

@@ -2,7 +2,7 @@
 name: Mort
 office: FN17
 phone: (3)34419
-image: assets/images/mort.jpg
+image: mort.jpg
 homepage: mort.io
 ---
 
