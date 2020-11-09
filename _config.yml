@@ -1,5 +1,5 @@
 name: AdaptiveCity GitHub Pages
-markdown: GFM
+markdown: kramdown
 collections:
  - people
  - projects

@@ -3,6 +3,8 @@ layout: default
 title: Home
 ---
 
+<h1>Overview of the AdaptiveCity / CDBB Digital Twin Program</h1>
+
 <p>
 Our work involves the collection and analysis of historical and real-time sensor data from within an urban
 region (working with <a href="https://smartcambridge.org/">SmartCambridge</a>)
@@ -10,12 +12,80 @@ region (working with <a href="https://smartcambridge.org/">SmartCambridge</a>)
 building management (working with the
 <a href="https://www.cdbb.cam.ac.uk/">Center for Digital Built Britain</a>
 ).
+
+<p>We envisage a world where <b>buildings and cities operate largely autonomously</b>, such that the infrastructure is
+    itself the major consumer of the reference and real-time data. In this environment dense sensor deployments will
+    allow accurate assessment of the current state and also provide historical data from which 'normal' patterns of
+    behaviour can be learned and anomolies detected. Continuous analysis will be required such that issues (such as
+    congestion) can be predicted and timely action taken.
 </p>
+
+<p>We are taking a comprehensive approach in managing building and urban data in the following areas:
+</p>
+<dl>
+    <dt>Sensor readings</dt>
+    <dd>These are spatio-temporal, i.e. usually associated with a <i>time</i> and <i>location</i>
+        in the building or urban region
+        but also possibly associated with a managed asset. We collect this data into a historical
+        archive but also pump it through our stream processing platform such that analysis can
+        take place in real-time.</dd>
+
+    <dt>Sensor metadata</dt>
+    <dd>We need to manage 'reference data' for the <i>sensors</i> and the <i>sensor types</i>,
+        e.g. to record where stationary sensors have been placed and to help interpret the
+        data the sensors are sending. Our approach is to be <i>flexible</i> i.e. it remains possible
+        to integrate a sensor into the system with the absolute minimum of information, but that
+        assumes the ultimate recipient of the data will have the knowledge of how to interpret it.
+    </dd>
+
+    <dt>BIM data</dt>
+    <dd>We use this term to mean the <i>relatively</i> static data representing 'assets' in a building or
+        urban region, such as might be stored in IFC [<a href="https://en.wikipedia.org/wiki/Industry_Foundation_Classes">ref</a>].
+        Storage methods and query tools for this data traditionally ignore the concept of <i>time</i> but
+        note that the Adaptive City Platorm ensures all data is timestamped and the history maintained.
+    </dd>
+
+    <dt>Visual representation data</dt>
+    <dd>A common requirement is to be able to <i>draw</i> a visual representation of the assets and sensors managed
+        in the system and it is common (e.g. in IFC data) that the properties stored for a given asset are primarily
+        useful to enable that asset (such as a concrete slab or pipe) to be drawn on a plan. On the Adaptive City Platform
+        we separate the 'drawing' information into a dedicated API such that drawing common types of assets (e.g. building,
+        floor, office, desk, microscope, sensor) can be generalized.
+    </dd>
+</dl>
+
 <p>
 Within Cambridge, this work involves a close collaboration between
 <a href="https://www.cst.cam.ac.uk">the Department of Computer Science and Technology</a>
  and <a href="https://www.ifm.eng.cam.ac.uk">the Institute for Manufacturing</a>.
 </p>
+
+<h1>Research themes</h1>
+
+<h2>Sensor network sensor nodes, and intelligent sensors</h2>
+
+<img class="page_medium_left" src="/assets/images/acp_local_mqtt.png" />
+
+<h2>Data architecture</h2>
+
+<h2>Platform architecture</h2>
+
+<img src="/assets/images/acp_server.png"/>
+
+<h2>Visualisation</h2>
+
+<img src="/assets/images/acp_web_time.png"/>
+
+<h2>Analysis</h2>
+
+<img src="/assets/images/voronoi.png"/>
+
+<h2>Privacy</h2>
+
+<h1><i>Time</i>, <i>timeliness</i> and <i>real-time</i> data processing.</h1>
+
+<p>Ticking away, the moments that make up a dull day.[<a href="https://www.youtube.com/watch?v=JwYX52BP2Sk&t=132s">ref</a>]
+ </p>
 
 <p>
 Hopefully, it is sufficiently clear from the design of our platform and all the documentation
@@ -23,15 +93,13 @@ included with every project that we care about <b>time</b> and <b>timeliness</b>
 the vast majority of sensor deployment projects simply collect and store the data for subsequent
 processing (e.g. deploy some NO2 sensors in a city, collect the data over a few months, analyze the
 collected information to produce a great paper) that is <i>categorically</i> not the approach taken in
-our research. 
+our research.
 </p>
 <p>We are planning for the cities and buildings of the future requiring a
 significant autonomy of operation and the sensors represent the eyes and ears of that intelligent
 infrastructure. Incoming real-time data must be interpreted and analyzed such that patterns and
 derived events can be recognized promptly and timely actions taken.
 </p>
-
-<h2><i>Time</i>, <i>timeliness</i> and <i>real-time</i> data processing.</h2>
 
 <p>These concepts are central to the work that we are doing to the extent that a large body of our work is concerned with managing effectively the
 spatial and temporal data associated with urban and in-building data. Note this contrasts with work that will result in a single heatmap of NO2 in a city,
@@ -40,18 +108,16 @@ data requires careful consideration of the space and time coordinates, particula
 
 <dl>
     <dt>Time</dt>
-    <dd><p>Ticking away, the moments that make up a dull day.[<a href="https://www.youtube.com/watch?v=JwYX52BP2Sk&t=132s">ref</a>]
-     </p>
-     <p>We attach timestamps
-     to our data at the earliest opportunity and continue to add timestamps at other steps in the processing. One timestamp is more important than all the 
+    <dd><p>We attach timestamps
+     to our data at the earliest opportunity and continue to add timestamps at other steps in the processing. One timestamp is more important than all the
      others, i.e. <i>the time most sensibly associated with the sensor reading</i>, and we give this the name <tt>acp_ts</tt>. There will be multiple other
      times that will be relevant for most sensors, e.g. for our CNN camera <a href="https://github.com/AdaptiveCity/deepdish">DeepDish</a> there will be
      a time the image was taken, the time the object detection produced the count, the time the data was sent from the sensor, the time it arrived at our
-     platform, and so on. In this case we would deem the time the picture was taken most appropriate for <tt>acp_ts</tt>. 
+     platform, and so on. In this case we would deem the time the picture was taken most appropriate for <tt>acp_ts</tt>.
      </p>
      <p>In due course a higher-level program
      may decide the multiple DeepDish counts of people from spatially neighboring sensors are sufficient to raise a Covid proximity warning, and that
-     warning becomes its own 'reading' (we would use the word 'event') flowing through the system with its own <tt>acp_ts</ts>. The relationship between these
+     warning becomes its own 'reading' (we would use the word 'event') flowing through the system with its own <tt>acp_ts</tt>. The relationship between these
      timestamps itself becomes of significant interest.
      </p>
     </dd>
@@ -85,34 +151,34 @@ data requires careful consideration of the space and time coordinates, particula
         extremely limited (to those working on bus position analysis systems who don't have their
         own real-time platform).
         </p>
-     
+
     <dt>Real-time data</dt>
     <dd><p>This is the data flowing 'live' through our platform, through the real-time analytics and pattern recognition,
         to the visualisation tools and actuators that affect the infrastructure. The data that has been stored ceases to
         be 'real-time'.
     </dd>
-    
+
     <dt>Time-series data</dt>
     <dd><p>This is the simple process of associating a time with a data value, such as most sensor data. Data stored
         in a database is considered by us to be 'historical' data although still potentially useful in analysing the
         real-time data. Using a time-series database particularly suited to time/value
         datasets typically speeds up queries using temporal parameters but should not be confused with a 'real-time'
         platform although reference to this historical data may well help inform pattern recognition on the real-time
-        data flowing through our platform. The fact that real-time data pouring into a time-series database will 
+        data flowing through our platform. The fact that real-time data pouring into a time-series database will
         have the effect that the database will contain the latest sensor data values does not make the time-series
         database a real-time platform.
         </p>
-        
+
     <dt>Asynchronous support</dt>
     <dd><p>Somewhat late to the party, programming languages are adding 'async' features (e.g.
         <a href="https://docs.python.org/3/library/asyncio.html">Python</a>) that assist in handling inherently asynchronous sensor
         data in a more efficient way both from the clarity of the programming and the efficiency of the code. The core of the
         Adaptive City Platform is implemented with <a href="https://www.youtube.com/watch?v=rvmRzDpZXGQ">Java/Vertx</a>.
         </p>
-        
+
     <dt>Stream processing</td>
     <dd><p>This is essentially what we are doing with <a href="https://vertx.io/">Eclipse Vertx</a>, which is a combination of asynchronous
-        programming support (in Java) with a data publish/subscribe mechanism called the EventBus. 
+        programming support (in Java) with a data publish/subscribe mechanism called the EventBus.
         <a href="http://storm.apache.org/">Apache Storm</a> and <a href="https://kafka.apache.org/">Apache Kafka</a> have gained
         popular support in the past couple of years both of which have the 'real-time' characteristic that data is <i>pushed</i> through
         the system. Beyond that common characteristic, the available 'stream processing' platforms differ significantly in their approach
@@ -122,23 +188,3 @@ data requires careful consideration of the space and time coordinates, particula
         delay that by pumping through older sensor readings which are now less important.
         </p>
 </dl>
-
-<h2>Sensor network sensor nodes, and intelligent sensors</h2>
-
-<img src="/assets/images/acp_local_mqtt.png" />
-
-<h2>Data architecture</h2>
-
-<h2>Platform architecture</h2>
-
-<img src="/assets/images/acp_server.png"/>
-
-<h2>Visualisation</h2>
-
-<img src="/assets/images/acp_web_time.png"/>
-
-<h2>Analysis</h2>
-
-<img src="/assets/images/voronoi.png"/>
-
-<h2>Privacy</h2>
