@@ -148,9 +148,10 @@ then a link to a stylesheet `/assets/style/css/foo.css` will be loaded in the pa
 # Using desktop Jekyll
 
 Due to configuration differences between desktop Jekyll and GitHub Pages this wasn't totally
-seamless but works fine after our compatible site conventions are adopted in the project.
+seamless but works fine after our compatible site conventions are adopted in the project. Below
+are a couple of examples
 
-## Installing Jekyll on Ubuntu
+## Native install Jekyll on Ubuntu
 
 ```
 sudo apt install ruby-full build-essential zlib1g-dev
@@ -165,4 +166,38 @@ Now you should be able to locally serve (on port: 4000) the web content:
 ```
 ./jekyll_serve.sh
 ```
-which is currently simply `bundle exec jekyll serve --livereload --host 0.0.0.0`
+which is currently simply `bundle exec jekyll serve --livereload --host 0.0.0.0` *using default port 4000*
+
+I.e. you can access the web pages at `http://<servername>:4000/`
+
+## Using Jekyll via Docker
+
+Step 1, [install Docker Engine](https://docs.docker.com/engine/install/)
+
+E.g. for Ubuntu I did the following, I think the Docker install downloads ~500MB:
+```
+sudo apt update
+sudo apt upgrade
+sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo docker run hello-world
+```
+
+Then in the `adaptivecity.github.io` directory:
+```
+sudo make all
+```
+This took 3 minutes on my home PC, and on completion you should have a `/_site` directory.
+
+Then to run the site *on port 8080*:
+```
+sudo make test
+```
+
+This will serve the web content on port 8080, and the site will auto-rebuild if you edit any file in the repo.
+
+On my home PC there was a similar 3 minute delay before the site appeared on port 8080.

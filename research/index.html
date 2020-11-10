@@ -1,0 +1,28 @@
+---
+layout: default
+title: Research
+css: research
+---
+
+<div>
+<ul class="research">
+
+{% for theme in site.research %}
+
+      <li class="theme">
+        <div class="logo">
+          <a href="{{ theme.link }}">
+            <div class="title"><h2>{{ theme.title }}</h2></div>
+            <img alt="{{ theme.title }}" src="assets/images/{{ theme.image }}">
+          </a>
+        </div>
+        <div class="contact">
+            <a href="{{ theme.contact_link }}">{{ theme.contact_name }}</a>
+        </div>
+        <p class="description">
+		        {{ theme.content | markdownify }}
+        </p>
+      </li>
+{% endfor %}
+</ul>
+</div>

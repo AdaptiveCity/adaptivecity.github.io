@@ -3,3 +3,4 @@ markdown: kramdown
 collections:
  - people
  - projects
+ - research
