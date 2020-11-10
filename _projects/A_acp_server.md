@@ -3,7 +3,7 @@ title: ACP Server
 link: https://github.com/AdaptiveCity/acp_server
 contact_name: Ian Lewis
 contact_link: https://www.cl.cam.ac.uk/~ijl20
-image: github.png
+image: acp_server.png
 ---
 
 acp_server is the core asynchronous message passing real-time system at the

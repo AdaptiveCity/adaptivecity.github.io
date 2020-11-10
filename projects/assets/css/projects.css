@@ -2,7 +2,7 @@
 ul.projects {list-style-type: none; clear:both;height:100%;}
 li.project {clear:both;overflow:auto;border-bottom:1px solid #f3bd48;padding-bottom:2ex;margin-bottom:2ex;}
 li.project .logo {float:left;padding-right:1em;text-align:center;height:100%;}
-li.project .logo img {border:0; padding:1ex 1em;width:200px;}
+li.project .logo img {border:0; padding:1ex 1em;width:300px;}
 li.project .title {font-weight:bold;}
 li.project .dates,
 li.project .contact {float:right;padding:0.5ex 0.5em;margin:0.5ex 0.5em;}
@@ -10,4 +10,3 @@ li.project .dates {background-color:#c44101;color:white;font-weight:bold;clear:r
 ul.projects li.project .dates:before {content: "Started: ";font-weight:normal;}
 li.project .contact {background-color:#f3bd48;font-weight:bold;}
 li.project .contact:before {content: "Contact: ";font-weight:normal;}
-     

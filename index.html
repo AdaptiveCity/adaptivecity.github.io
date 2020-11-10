@@ -20,115 +20,13 @@ building management (working with the
     congestion) can be predicted and timely action taken.
 </p>
 
-<p>We are taking a comprehensive approach in managing building and urban data in the following areas:
-</p>
-<dl>
-    <dt>Sensor readings</dt>
-    <dd>These are spatio-temporal, i.e. usually associated with a <i>time</i> and <i>location</i>
-        in the building or urban region
-        but also possibly associated with a managed asset. We collect this data into a historical
-        archive but also pump it through our stream processing platform such that analysis can
-        take place in real-time.</dd>
-
-    <dt>Sensor metadata</dt>
-    <dd>We need to manage 'reference data' for the <i>sensors</i> and the <i>sensor types</i>,
-        e.g. to record where stationary sensors have been placed and to help interpret the
-        data the sensors are sending. Our approach is to be <i>flexible</i> i.e. it remains possible
-        to integrate a sensor into the system with the absolute minimum of information, but that
-        assumes the ultimate recipient of the data will have the knowledge of how to interpret it.
-    </dd>
-
-    <dt>BIM data</dt>
-    <dd>We use this term to mean the <i>relatively</i> static data representing 'assets' in a building or
-        urban region, such as might be stored in IFC [<a href="https://en.wikipedia.org/wiki/Industry_Foundation_Classes">ref</a>].
-        Storage methods and query tools for this data traditionally ignore the concept of <i>time</i> but
-        note that the Adaptive City Platorm ensures all data is timestamped and the history maintained.
-    </dd>
-
-    <dt>Visual representation data</dt>
-    <dd>A common requirement is to be able to <i>draw</i> a visual representation of the assets and sensors managed
-        in the system and it is common (e.g. in IFC data) that the properties stored for a given asset are primarily
-        useful to enable that asset (such as a concrete slab or pipe) to be drawn on a plan. On the Adaptive City Platform
-        we separate the 'drawing' information into a dedicated API such that drawing common types of assets (e.g. building,
-        floor, office, desk, microscope, sensor) can be generalized.
-    </dd>
-</dl>
-
 <p>
 Within Cambridge, this work involves a close collaboration between
 <a href="https://www.cst.cam.ac.uk">the Department of Computer Science and Technology</a>
  and <a href="https://www.ifm.eng.cam.ac.uk">the Institute for Manufacturing</a>.
 </p>
 
-<h1>Research themes</h1>
-
-<h2>Sensor network, sensor nodes, and intelligent sensors</h2>
-
-<img class="page_medium_left" src="/assets/images/acp_local_mqtt.png" />
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-</p>
-
-<h2>Data architecture</h2>
-
-<img class="page_medium_left" src="/assets/images/data_strategy.png"/>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-</p>
-
-<h2>Platform architecture</h2>
-
-<img class="page_medium_left" src="/assets/images/acp_server.png"/>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-</p>
-
-<h2>Visualisation</h2>
-
-<img class="page_medium_left" src="/assets/images/acp_web_time.png"/>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-</p>
-
-<h2>Analysis</h2>
-
-<img class="page_medium_left" src="/assets/images/voronoi.png"/>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-</p>
-
-<h2>Privacy</h2>
-
-<img class="page_medium_left" src="/assets/images/titan.png"/>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-</p>
-
-<h1><i>Time</i>, <i>timeliness</i> and <i>real-time</i> data processing.</h1>
+<h1>Data standards, time, timeliness and real-time data processing.</h1>
 
 <p>Ticking away, the moments that make up a dull day.[<a href="https://www.youtube.com/watch?v=JwYX52BP2Sk&t=132s">ref</a>]
  </p>
@@ -136,20 +34,29 @@ mollit anim id est laborum.
 <p>
 Hopefully, it is sufficiently clear from the design of our platform and all the documentation
 included with every project that we care about <b>time</b> and <b>timeliness</b> a great deal. Where
-the vast majority of sensor deployment projects simply collect and store the data for subsequent
-processing (e.g. deploy some NO2 sensors in a city, collect the data over a few months, analyze the
+the vast majority of building information management and sensor deployment projects simply collect and store the
+data for subsequent processing (e.g. deploy some NO2 sensors in a city, collect the data over a few months, analyze the
 collected information to produce a great paper) that is <i>categorically</i> not the approach taken in
 our research.
 </p>
+
 <p>We are planning for the cities and buildings of the future requiring a
 significant autonomy of operation and the sensors represent the eyes and ears of that intelligent
 infrastructure. Incoming real-time data must be interpreted and analyzed such that patterns and
 derived events can be recognized promptly and timely actions taken.
 </p>
 
-<p>These concepts are central to the work that we are doing to the extent that a large body of our work is concerned with managing effectively the
-spatial and temporal data associated with urban and in-building data. Note this contrasts with work that will result in a single heatmap of NO2 in a city,
-derived from only 10 sensors with the data collected over a period of a month. Prompt recognition of spatio-temporal patterns in heterogeneous sensor
+<p>There is a general question (which we are yet to answer) which is whether <i>all</i> data we work
+    with should be treated as time-series data. E.g. the properties of a building asset (like an office) are often
+    treated as 'fixed', traditionally captured on a working drawing, and if the office is changed then that will eventually
+    be reflected in updated versions of the drawing for the whole floor. Our model stores the changes to each of our
+    'static' data types effectively as a timestamped <i>transaction log</i>.
+</p>
+
+<p>The concepts of changing data and timely action are central to the work that we are doing. A large body of our work is concerned with managing effectively the
+spatial and temporal data associated with urban and in-building data. We believe this tackles the important real-time requirement while
+still supporting the 'planning timescale' initiatives such as producing a particulates heatmap for a city (or a building) collected over a period of a month.
+Prompt recognition of spatio-temporal patterns in heterogeneous sensor
 data requires careful consideration of the space and time coordinates, particularly when the 'sensors' are moving around. </p>
 
 <dl>
