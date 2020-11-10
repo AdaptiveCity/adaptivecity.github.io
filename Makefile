@@ -21,7 +21,7 @@ help: # list targets
 	  | awk -F'\\s*#\\s*' \
 	      '{ if (length($2) != 0) printf("-- %s\n  %s\n\n", $$1, $$2) }'
 
-PORT  ?= 8080
+PORT ?= 8080
 
 DOCKER = docker run -ti -v $$(pwd -P):/srv/jekyll $$DOCKER_FLAGS
 JEKYLL = $(DOCKER) jekyll/jekyll
@@ -33,7 +33,7 @@ all: site
 
 .PHONY: clean
 clean: # remove build artefacts
-	$(RM) -r _site
+	$(RM) -r _site .jekyll-cache
 
 .PHONY: site
 site: # build site
