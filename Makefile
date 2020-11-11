@@ -33,16 +33,19 @@ all: site
 
 .PHONY: clean
 clean: # remove build artefacts
-	$(RM) -r _site .jekyll-cache
+	$(RM) -r _site .jekyll-cache Gemfile
 
 .PHONY: site
 site: # build site
+	$(RM) Gemfile
 	$(JEKYLL) jekyll build --trace
 
-.PHONY: test
-test: # serve site for testing
+.PHONY: serve
+serve: # serve site for testing
+	$(RM) Gemfile
 	$(JEKYLLS) jekyll serve -H 0.0.0.0 -P $(PORT) --trace --watch --future
 
 .PHONY: drafts
 drafts: # serve site, including draft posts
+	$(RM) Gemfile
 	$(JEKYLLS) jekyll serve -H 0.0.0.0 -P $(PORT) --trace --watch --future --drafts
