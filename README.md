@@ -2,16 +2,24 @@
 
 This is the Git repo for [our online web content](https://adaptivecity.github.io)
 
-## Add a Person to the People page
+In summary there are three ways to edit this web content:
 
-Put a portrait image into directory `_people/images`. If you're shy, google images "anonymous portrait" and pick one
-of those...
+1. Use the edit forms built into the GitHub website, e.g. to create a 'New' file and upload an image into the `_people` directory.
 
-In directory `_people/` create a new file `<INITIAL>_<yourname>.md` or `<INITIAL>_<yourname>.hmtl` where
-`<INITIAL>` is purely used for lexical ordering E.g. I used `L_ijl20.md`.
-The `md` vs. `html` choice allows you to use either format for your content although either way
-the page needs to start with a Jekyll frontspiece setting required variables. `office`/`phone` are
-unused at the moment. See example:
+2. Use this project like any other repo, i.e. `git clone https://github.com/adaptivecity/adaptivecity.github.io` and edit the files with
+your favorite desktop editor. For a minor change a straight push back to branch `main` will be fine, for anything more substantial
+it makes sense to create a new branch.
+
+3. Follow step 2. and also install [Jekyll](https://jekyllrb.com/) (instructions below). This will allow you to serve the website locally and admire your
+changes as you make them.
+
+## Common content editing tasks
+
+### Add a Person to the People page
+
+Put a portrait image into directory `_people/images`. If you're shy, google images "anonymous portrait" and pick one of those...
+
+In directory `_people/` create a new file `<INITIAL>_<yourname>.md` or `<INITIAL>_<yourname>.html` where `<INITIAL>` is purely used for lexical ordering E.g. I used `L_ijl20.md`. The `md` vs. `html` choice allows you to use either format for your content although either way the page needs to start with a Jekyll frontmatter setting required variables. `office`/`phone` are unused at the moment. See example:
 
 ```
 ---
@@ -29,14 +37,13 @@ prediction, planning and privacy. His PhD, from the Cambridge Computer Lab, was 
 distributed parallel AI.
 ```
 
-## Add a Project to the Projects page
+### Add a Project to the Projects page
 
-Same routine as for People, just difference directories.
+Same routine as for People, just different directories.
 
-Reuse or put a portrait image into directory `_projects/images`.
+Reuse or put a suitable image into directory `_projects/images`.
 
-In directory `_projects`, create a new file `<INITIAL>_<newproject>.md` or `<INITIAL>_<newproject>.hmtl`
-as with Person above, e.g.:
+In directory `_projects`, create a new file `<INITIAL>_<newproject>.md` or `<INITIAL>_<newproject>.hmtl` as with Person above, e.g.:
 
 ```
 ---
@@ -56,22 +63,11 @@ both data held in storage (including the most recent) **and** streaming data flo
 through the platform. The latter is delivered by ACP Server via websockets to the browser.
 ```
 
-# General advice for editting the site content
+### Add a research theme to the Research page
 
-This is a git repo on https://github.com/AdaptiveCity/adaptivecity.github.io so any content can be
-editted directly on the GitHub website. This is totally reasonable to create a new Person or Project
-entry as these simple involve the addition of new files (see above). For more substantial edits of
-the general content it makes sense to clone the repo to your desktop, i.e.
-`git clone https://github.com/AdaptiveCity/adaptivecity.github.io`.
+Same as People or Projects, in the `/_research` directory.
 
-On your desktop you can edit any files with the editor of your choice, push the changes back to
-github and view your great work at https://adaptivecity.github.io . Create a new branch for anything
-more than a simple change, and merge your branch back into `main` when you're happy with it.
-
-Once on your desktop, you **can** use a local installation of [Jekyll](https://jekyllrb.com/)
-to view the impact of your changes as you make the edits. Hints for that are below.
-
-## `adaptivecity.github.io` file locations / directory structure
+## File locations / directory structure
 
 ### Homepage
 
@@ -83,8 +79,7 @@ to view the impact of your changes as you make the edits. Hints for that are bel
 
 `/people/index.html` contains the People page content with a templating loop that embeds the 'person' files.
 
-`/people/assets/images` is a symbolic link to `/_people/images` which was my convention so adding
-a person can be done entirely in the `_people` directory instead of scattering pieces around.
+`/people/assets/images` is a symbolic link to `/_people/images` which was my convention so adding a person can be done entirely in the `_people` directory instead of scattering pieces around.
 
 ### Projects
 
@@ -92,13 +87,11 @@ a person can be done entirely in the `_people` directory instead of scattering p
 
 `/projects/index.html` contains the Projects page content with a templating loop that embeds the 'project' files.
 
-`/projects/assets/images` is a symbolic link to `/_projects/images` which was my convention so adding
-a project can be done entirely in the `_projects` directory instead of scattering pieces around.
+`/projects/assets/images` is a symbolic link to `/_projects/images` which was my convention so adding a project can be done entirely in the `_projects` directory instead of scattering pieces around.
 
-### Default template and includes
+## Default template and includes
 
-Each main page contains a Jekyll **frontspiece** delimited by two `---` lines which set variables the Jekyll page-build
-process will use. For the Home page this is currently:
+Each main page contains a Jekyll **frontmatter** delimited by two `---` lines which set variables the Jekyll page-build process will use. For the Home page this is currently:
 ```
 ---
 layout: default
@@ -109,6 +102,7 @@ title: Home
 `_layouts/default.html` is a template for a page in the 'Cambridge' style, currently used site-wide.
 
 In an effort of supreme elegance, this `default` template currently contains:
+
 ```
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" class="no-js">
@@ -132,20 +126,69 @@ In an effort of supreme elegance, this `default` template currently contains:
 
 The 'include' files are:
 
-`_includes/default_head.html` - a HTML fragment representing the contents of the `<head>` element of the web page, hence
-pulling in all the Cambridge Project Light stylesheet/js crapola. This template also has a useful hook to embed an
-additional stylesheet for any page using this 'include' (including via the default template), i.e. if the frontspiece
-of a sub-page contains:
+`_includes/default_head.html` - a HTML fragment representing the contents of the `<head>` element of the web page, hence pulling in all the Cambridge Project Light stylesheet/js crapola. This template also has a useful hook to embed an additional stylesheet for any page using this 'include' (including via the default template), i.e. if the frontmatter of a sub-page contains:
+
 ```
 css: foo
 ```
+
 then a link to a stylesheet `/assets/style/css/foo.css` will be loaded in the page header.
 
 `_includes/srg_header.html` - stuff at the top of the `<body>` that draws the rather large Cambridge header.
 
 `_includes/srg_footer.html` - similar stuff that the bottom of the `<body>` that draws the Cambridge footer.
 
-# Using desktop Jekyll
+# Setting up a local view/edit system with Jekyll
+
+Note this is not **essential** for a basic edit of the content. I.e. you can simply `git clone` the repo, make some simple text
+edits, and push the result back up to GitHub. However, if you run Jekyll locally (i.e. the same software GitHub is using to
+generate the GitHub Pages) you can view the web content locally as you edit.
+
+## Installing Jekyll with Docker
+
+If you don't already have Docker, [install Docker Engine](https://docs.docker.com/engine/install/).
+
+The `Makefile` encodes some runes to use a supported [`jekyll` Docker image](https://github.com/jekyll/jekyll-docker) to build the site, and to serve it up locally for test.
+
+```sh
+: mort@greyjay:www$; make help
+-- help:
+  list targets
+
+-- all: site
+
+
+-- clean:
+  remove build artefacts
+
+-- site:
+  build site
+
+-- test:
+  serve site for testing
+
+-- drafts:
+  serve site, including draft posts
+```
+
+The latter two targets (`test`, `drafts`), serve the site at <https://localhost:$(PORT?=8080)/>. Editing content files while the site is being served will cause Jekyll to rebuild the edited files.
+
+In the `adaptivecity.github.io` directory:
+```
+sudo make all
+```
+On completion you should have a `/_site` directory.
+
+Then to serve the site *on port 8080*:
+```
+sudo make test
+```
+
+Visit `http://localhost|<servername>:8080`, and the site will auto-rebuild if you edit any file in the repo.
+
+Note currently (Nov 2020) these `make` scripts have a 3-minute startup time.
+
+## Using a native install Jekyll (Ubuntu example)
 
 Due to configuration differences between desktop Jekyll and GitHub Pages this wasn't totally
 seamless but works fine after our compatible site conventions are adopted in the project. Below
@@ -172,7 +215,6 @@ I.e. you can access the web pages at `http://<servername>:4000/`
 
 ## Using Jekyll via Docker
 
-Step 1, [install Docker Engine](https://docs.docker.com/engine/install/)
 
 E.g. for Ubuntu I did the following, I think the Docker install downloads ~500MB:
 ```
