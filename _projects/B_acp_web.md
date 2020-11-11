@@ -11,6 +11,5 @@ visualization of 'historical' and 'real-time' data. I.e. the web platform works 
 both data held in storage (including the most recent) **and** streaming data flowing
 through the platform. The latter is delivered via websockets to the browser.
 
-The Adaptive City Platform has 'traditional' request-response restful API's over http
-provided by ACP Web, as well as a real-time subscription API supported by the ACP Server
-(see above).
+Protected behind user authentication, acp_web provides office, floorplan, building and
+regional views of assets and sensor data.

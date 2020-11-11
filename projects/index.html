@@ -16,9 +16,11 @@ css: projects
             <img alt="{{ project.title }}" src="assets/images/{{ project.image }}">
           </a>
         </div>
+        {% if project.contact_name %}
         <div class="contact">
             <a href="{{ project.contact_link }}">{{ project.contact_name }}</a>
         </div>
+        {% endif %}
         <p class="description">
 		        {{ project.content | markdownify }}
         </p>

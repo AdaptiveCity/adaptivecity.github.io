@@ -1,8 +1,8 @@
 ---
 title: Zigbee sensor integration
 link: https://github.com/AdaptiveCity/acp_web
-contact_name: Thomas Jefferson
-contact_link: https://www.cl.cam.ac.uk/~ijl20
+contact_name: Vadim Safronov
+contact_link: https://www.cl.cam.ac.uk/~vs451
 image: zigbee.png
 ---
 

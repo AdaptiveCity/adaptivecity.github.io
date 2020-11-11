@@ -1,9 +1,9 @@
 ---
 title: In-building deployment
 link: https://github.com/AdaptiveCity/acp_web
-contact_name: James Monroe
-contact_link: https://www.cl.cam.ac.uk/~ijl20
+contact_name:
+contact_link:
 image: snake.jpg
 ---
 
-This work covers the implementation part of the platform and addresses themes like class of sensors to use, setting up network interfaces, optimal deployment strategies, scalability, privacy. 
+This work covers the implementation part of the platform and addresses themes like class of sensors to use, setting up network interfaces, optimal deployment strategies, scalability, privacy.

@@ -6,5 +6,5 @@ contact_link: https://www.cl.cam.ac.uk/~ijl20
 image: acp_server.png
 ---
 
-acp_server is the core asynchronous message passing real-time system at the
+acp_server is the core asynchronous publish/subscribe message passing real-time system at the
 heart of the Adaptive City Platform.
