@@ -6,4 +6,4 @@ contact_link: https://www.cl.cam.ac.uk/~ijl20
 image: acp_local_mqtt.png
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The ACP Local MQTT project achieves two crucial goals for the Adaptive City Platform. First, it creates a mosquitto bridge to retrieve sensor data from different network interfaces at a single mosquitto broker. Second, it provides a decoder framework which subscribes to incoming data form the mosquitto bridge and allows the dynamic addition of decoders capable of extracting and normalizing key properties such that the annotated data can be re-published for consumption further downstream on the ACP architecture like any other real-time data source.

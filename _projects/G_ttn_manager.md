@@ -6,4 +6,6 @@ contact_link: https://www.cl.cam.ac.uk/~rv355
 image: ttn_manager.png
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ACP TTN Manager provides means to manage devices of the Adaptive City Platform registered to a TTN Application. The available services include reading device details from TTN, registering or updating devices, deleting devices and also migrating devices from one application to another. Furthermore, this project also serves as a bridge between TTN applications and the ACP database.
+
+The project is built using the TTN HTTP API and provides support for both command line and code based management of devices.
