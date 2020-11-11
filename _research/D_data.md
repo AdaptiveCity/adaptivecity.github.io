@@ -1,12 +1,18 @@
 ---
-title: Data Strategy
+title: Building Information Management Strategy
 link: https://github.com/AdaptiveCity/acp_web
-contact_name: Ian Lewis
-contact_link: https://www.cl.cam.ac.uk/~ijl20
+contact_name:
+contact_link:
 image: data_strategy.png
 ---
 
-<p>We are taking a comprehensive approach in managing building and urban data in the following areas:
+<p>With our <a href="https://github.com/AdaptiveCity/acp_data_strategy">ACP Data Strategy</a> we are exploring
+a broad range of issues in managing building and urban data. An essential aspect of our work is that
+it must address the issues of rapidly changing data (such as sensor readings) but also recognise that
+traditionally 'static' information (like building plans) <i>do</i> change over time. The multiple data
+types are intimately related and need to be considered in a more holistic way than currently.
+As a result we are researching a
+unified approach to managing the data in the following areas:
 </p>
 <dl>
     <dt>Sensor readings</dt>

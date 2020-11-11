@@ -16,9 +16,11 @@ css: research
             <img alt="{{ theme.title }}" src="assets/images/{{ theme.image }}">
           </a>
         </div>
+        {% if theme.contact_name %}
         <div class="contact">
             <a href="{{ theme.contact_link }}">{{ theme.contact_name }}</a>
         </div>
+        {% endif %}
         <p class="description">
 		        {{ theme.content | markdownify }}
         </p>
