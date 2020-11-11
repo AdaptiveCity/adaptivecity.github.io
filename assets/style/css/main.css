@@ -1,4 +1,13 @@
 
+.home_main_image {
+    display: block;
+    max-width: 80%;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 ul.stanzas {list-style-type: none; clear:both;height:100%;}
 li.stanza {clear:both;overflow:auto;border-bottom:1px solid #f3bd48;padding-bottom:2ex;margin-bottom:2ex;}
 li.stanza .logo {float:left;padding-right:1em;text-align:center;height:100%;}

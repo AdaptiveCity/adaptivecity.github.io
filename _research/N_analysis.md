@@ -1,9 +1,19 @@
 ---
-title: Rael-time data analysis and pattern recognition
-link: https://github.com/AdaptiveCity/acp_web
-contact_name: Andrew Jackson
-contact_link: https://www.cl.cam.ac.uk/~mrd45
+title: Real-time data analysis and pattern recognition
+link: https://github.com/AdaptiveCity/acp_server
+contact_name:
+contact_link:
 image: analysis.png
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Much of the work we are doing builds up to this significant opportunity. Firstly we wish to investigate how higher-level
+'events' might be created and propagated through our platform derived from underlying simpler sensor readings. The sensor
+readings involved will have an implied spatial and temporal relationship. For an urban environment a simple example is
+traffic congestion. The traffic patterns are inherently spatio-temporal, these patterns can be learned and with a dense
+deployment of real-time sensors an abnormal situation can quickly be recognized. It is possible the abnormal pattern is similar
+to those in the past, perhaps a likely outcome can be predicted (maybe heavy traffic in Queens at 7am means a nightmare in
+uptown Manhattan at 8:30). In this case action can be taken based on the prediction such that the otherwise likely congestion is
+mitigated. In-building examples are less impactful (perhaps an early rise in meeting room occupancy on a humid day suggests it is
+likely to become uncomfortable later) but the ideas of intelligent real-time sensor data analysis and autonomous operation are
+similar.
+ 
