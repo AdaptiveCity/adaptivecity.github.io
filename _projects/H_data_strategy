@@ -6,8 +6,4 @@ contact_link: https://www.cl.cam.ac.uk/~ijl20
 image: data_strategy.png
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-sunt in culpa qui officia deserunt mollit anim id est laborum.
+The ACP Data Strategy works to overcome the issues which arise with managing building and urban data. We build approaches to handle both building information and sensor data alongwith sensor metadata in this project. Means to normalize data arriving from different sensors and sources is provided. This doesn't imply a standardized protocol/format for all data sources, rather, the project tailors the data accordingly for improved data management.  As of now we propagate both the data and metadata using JSON objects. Going ahead, the project will provide utilitues to move data between JSON files and PostgreSQL.

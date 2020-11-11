@@ -6,4 +6,4 @@ contact_link: https://www.cl.cam.ac.uk/~ijl20
 image: zigbee.png
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The Zigbee sensor integration project provides support to incorporate zigbee sensors into the Adaptive City Platform. The work does not address the issue of seamless connectivity of ZigBee devices into a consumer-friendly home automation service, in fact it does pretty much the opposite by trying collect the data from the devices and forward the same to a mqtt broker with as little 'application-level' software in the way as possible. The work also provides support to send commands if needed.

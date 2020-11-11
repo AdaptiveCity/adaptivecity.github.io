@@ -6,4 +6,4 @@ contact_link: https://www.cl.cam.ac.uk/~ijl20
 image: acp_mqtt_decoders.png
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Presence of multiple data sources arriving to a MQTT broker on the ACP architecture, it is important to have a framework to normalize/decode the data in the incoming messages and re-publish for consumption further downstream. The ACP Decoders project serves this purpose. Support is available to add decoders dynamically whenever needed without any interference with the main process. This is to support a typical IoT environment where new sensor types are added to the network with a data format not compatible with existing decoders for that network.
