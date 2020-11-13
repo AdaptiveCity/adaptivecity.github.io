@@ -6,4 +6,9 @@ contact_link: https://www.cl.cam.ac.uk/~mrd45
 image: huey.png
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+DeepDish is a CNN-based intelligent sensor designed to track the
+movement in a fixed scene of categories of objects (e.g. people, cars,
+bicycles, etc) for real-time reporting to the Adaptive City platform.
+The sensor uses a Raspberry Pi and a Python framework with multiple
+alternative CNN models such that relative performance in terms of speed,
+accuracy and energy consumption can be assessed.
