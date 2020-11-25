@@ -8,6 +8,26 @@
     margin-right: auto;
 }
 
+.on_page_image_left {
+    max-width: 20%;
+    display: inline-block;
+    float: left;
+}
+
+.on_page_image_right {
+    max-width: 20%;
+    display: inline-block;
+    float: right;
+}
+
+.on_page_image_left img {
+    width: 100%;
+}
+
+.on_page_image_right img {
+    width: 100%;
+}
+
 ul.stanzas {list-style-type: none; clear:both;height:100%;}
 li.stanza {clear:both;overflow:auto;border-bottom:1px solid #f3bd48;padding-bottom:2ex;margin-bottom:2ex;}
 li.stanza .logo {float:left;padding-right:1em;text-align:center;height:100%;}
@@ -25,3 +45,5 @@ img.page_medium_left { float: left; width: auto; height: auto; max-height: 200px
 h1 { clear: both; }
 
 h2 { clear:both; }
+
+h3 { clear:both; }
