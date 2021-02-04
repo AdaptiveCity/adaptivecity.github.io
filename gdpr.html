@@ -1,0 +1,210 @@
+---
+layout: default
+title: GDPR information
+---
+
+<h1>GDPR information</h1>
+
+<p>Controller: Richard Mortier</p>
+
+<p>Contact: richard.mortier (at) cst.cam.ac.uk, or telephone: +44 (0)1223 334419</p>
+
+<p>Purpose and legal basis: Video collection is taking place for the purpose of scientific experiments
+regarding machine comprehension of human movement,
+with basis under Article 6 (1) (f) Legitimate Interest.
+Personally identifiable information is being kept securely and will not be released.</p>
+
+<p>Data Subject Rights: As a data subject you have several rights against the controller, in particular
+the right to request from the controller access to or erasure of your personal data.
+For enquiries on this video recording, please get in touch with the controller using the contact information above.</p>
+
+<p>See also <a href="https://edpb.europa.eu/sites/edpb/files/consultation/edpb_guidelines_201903_videosurveillance.pdf">Guidelines 3/2019</a> on processing of personal data through video devices.</p>
+
+<h3>More information about our work</h3>
+
+<p>
+Our work involves the collection and analysis of historical and real-time sensor data from within an urban
+region (working with <a href="https://smartcambridge.org/">SmartCambridge</a>)
+ and technically similar work for in-building sensor data and
+building management (working with the
+<a href="https://www.cdbb.cam.ac.uk/">Center for Digital Built Britain</a>
+).
+
+<p>We envisage a world where <b>buildings and cities operate largely autonomously</b>, such that the infrastructure is
+    itself the major consumer of the reference and real-time data. In this environment, dense sensor deployments will
+    allow accurate assessment of the current state and also provide historical data from which 'normal' patterns of
+    behaviour can be learned and anomolies detected. Continuous analysis will be required such that issues (such as
+    congestion) can be predicted and timely action taken.
+</p>
+
+<p>
+Within Cambridge, this work involves a close collaboration between
+<a href="https://www.cst.cam.ac.uk">the Department of Computer Science and Technology</a>
+ and <a href="https://www.ifm.eng.cam.ac.uk">the Institute for Manufacturing</a>.
+</p>
+
+<h3>More on the Centre for Digital Built Britain</h3>
+
+<div>
+    <div class="on_page_image_left"><img src="/assets/images/cdbb.png"></div>
+    <div>
+        <p>This research/output/report forms part of the Centre for Digital Built Britain’s (CDBB) work at the University of Cambridge
+            within the Construction Innovation Hub (CIH) which brings together world-class expertise from the
+             Manufacturing Technology Centre (MTC), BRE and CDBB to transform the UK construction sector.
+             The Construction Innovation Hub  is funded by UK Research and Innovation through the Industrial Strategy Fund.
+        </p>
+
+        <p><a href="https://www.cdbb.cam.ac.uk/">Further information regarding CDBB is available here.</a></p>
+    </div>
+</div>
+
+<h3>And more on SmartCambridge</h3>
+
+<div>
+    <div class="on_page_image_right"><img src="/assets/images/smartcambridge.png"></div>
+    <div>
+        <p>Smart Cambridge is exploring how data, emerging technology and digital connectivity can be used to
+            transform the way people live, work and travel in the Greater Cambridge area and beyond.</p>
+
+<p>This rapidly evolving programme is harnessing the latest technologies to improve the economic
+strength and sustainability of the area.</p>
+
+<p>Local councils, technology businesses, university researchers and partner organisations are
+working together to find smart ways to tackle city challenges, such as transport and air quality.</p>
+
+<p>The work is supported by the Connecting Cambridgeshire partnership programme, led by Cambridgeshire
+County Council, which is improving the county’s digital infrastructure with better broadband, free
+ public WiFi and wider mobile coverage.</p>
+
+<p>With investment from the Greater Cambridge Partnership and the Cambridgeshire and Peterborough Combined
+Authority, the Smart Cambridge programme is being scaled up from 2017-2020, to focus on maximising the
+ impact of transport-related work through:</p>
+
+<ul>
+    <li>Better quantity, quality and use of data</li>
+    <li>Embedding digital solutions and emerging technology</li>
+    <li>Collaboration with business, community and academic sectors</li>
+    <li>The pioneering research is managed through Connecting Cambridgeshire and is overseen by a
+        Project Board and an Advisory Group to steer the work and give technical guidance.</li>
+</ul>
+
+        <p><a href="https://www.connectingcambridgeshire.co.uk/smart-places/smart-cambridge/">Further information regarding SmartCambridge
+            is available here.</a></p>
+    </div>
+</div>
+
+<h1>Data standards, time, timeliness and real-time data processing.</h1>
+
+<p>Ticking away, the moments that make up a dull day.[<a href="https://www.youtube.com/watch?v=JwYX52BP2Sk&t=132s">ref</a>]
+ </p>
+
+<p>
+Hopefully, it is sufficiently clear from the design of our platform and all the documentation
+included with every project that we care about <b>time</b> and <b>timeliness</b> a great deal. Where
+the vast majority of building information management and sensor deployment projects simply collect and store the
+data for subsequent processing (e.g. deploy some NO2 sensors in a city, collect the data over a few months, analyze the
+collected information to produce a great paper) that is <i>categorically</i> not the approach taken in
+our research.
+</p>
+
+<p>We are planning for the cities and buildings of the future requiring a
+significant autonomy of operation and the sensors represent the eyes and ears of that intelligent
+infrastructure. Incoming real-time data must be interpreted and analyzed such that patterns and
+derived events can be recognized promptly and timely actions taken.
+</p>
+
+<p>There is a general question (which we are yet to answer) which is whether <i>all</i> data we work
+    with should be treated as time-series data. E.g. the properties of a building asset (like an office) are often
+    treated as 'fixed', traditionally captured on a working drawing, and if the office is changed then that will eventually
+    be reflected in updated versions of the drawing for the whole floor. Our model stores the changes to each of our
+    'static' data types effectively as a timestamped <i>transaction log</i>.
+</p>
+
+<p>The concepts of changing data and timely action are central to the work that we are doing. A large body of our work is concerned with managing effectively the
+spatial and temporal data associated with urban and in-building data. We believe this tackles the important real-time requirement while
+still supporting the 'planning timescale' initiatives such as producing a particulates heatmap for a city (or a building) collected over a period of a month.
+Prompt recognition of spatio-temporal patterns in heterogeneous sensor
+data requires careful consideration of the space and time coordinates, particularly when the 'sensors' are moving around. </p>
+
+<dl>
+    <dt>Time</dt>
+    <dd><p>We attach timestamps
+     to our data at the earliest opportunity and continue to add timestamps at other steps in the processing. One timestamp is more important than all the
+     others, i.e. <i>the time most sensibly associated with the sensor reading</i>, and we give this the name <tt>acp_ts</tt>. There will be multiple other
+     times that will be relevant for most sensors, e.g. for our CNN camera <a href="https://github.com/AdaptiveCity/deepdish">DeepDish</a> there will be
+     a time the image was taken, the time the object detection produced the count, the time the data was sent from the sensor, the time it arrived at our
+     platform, and so on. In this case we would deem the time the picture was taken most appropriate for <tt>acp_ts</tt>.
+     </p>
+     <p>In due course a higher-level program
+     may decide the multiple DeepDish counts of people from spatially neighboring sensors are sufficient to raise a Covid proximity warning, and that
+     warning becomes its own 'reading' (we would use the word 'event') flowing through the system with its own <tt>acp_ts</tt>. The relationship between these
+     timestamps itself becomes of significant interest.
+     </p>
+    </dd>
+
+    <dt>Timeliness</dt>
+    <dd><p>This concept combines three factors:</p>
+        <ul>
+            <li>The natural period over which sensor readings could be considered relevant
+                for a decision or action to be taken. </li>
+            <li>The urgency with which a decision <i>should</i> be taken, e.g. to warn of a
+                car crash or school shooting. </li>
+            <li>The natural time taken for a reading to be collected or event to be recognized.
+                For example a device measuring gas concentration make take a certain amount of
+                time to generate a reading or a system may take a while to decide that occupants
+                of a building are not behaving 'normally'.</li>
+        </ul>
+        <p>In summary, the timeliness required in analysing and acting upon sensor data is an important property and
+         the work we do targets timescales of seconds or less. We do not assume simple analysis of readings from a single
+         sensor or indeed sensors of a single type, rather an action may be based upon a cumulative recent history of
+         sensor readings from a diverse set of sensors resulting in an action such as "close the highway".
+        </p>
+        <p>In this context the difference between <i>planning</i>
+        and <i>action</i> needs to be considered. For example you can collect pollution levels
+        for a city and analyze that ten years later and still
+        produce useful information that will aid the planning process for that city. In contrast, our
+        experience with bus position data around Cambridge UK is that after the information is a few
+        seconds old there is little practical use for it. We derive, in real-time, road speed information
+        from the position reports of the buses - this information has been of interest to people
+        analyzing traffic in the Cambridge region for several years and been distributed to over
+        100 researchers, but the relative interest in the historic <i>position</i> of any bus is
+        extremely limited (to those working on bus position analysis systems who don't have their
+        own real-time platform).
+        </p>
+
+    <dt>Real-time data</dt>
+    <dd><p>This is the data flowing 'live' through our platform, through the real-time analytics and pattern recognition,
+        to the visualisation tools and actuators that affect the infrastructure. The data that has been stored ceases to
+        be 'real-time'.
+    </dd>
+
+    <dt>Time-series data</dt>
+    <dd><p>This is the simple process of associating a time with a data value, such as most sensor data. Data stored
+        in a database is considered by us to be 'historical' data although still potentially useful in analysing the
+        real-time data. Using a time-series database particularly suited to time/value
+        datasets typically speeds up queries using temporal parameters but should not be confused with a 'real-time'
+        platform although reference to this historical data may well help inform pattern recognition on the real-time
+        data flowing through our platform. The fact that real-time data pouring into a time-series database will
+        have the effect that the database will contain the latest sensor data values does not make the time-series
+        database a real-time platform.
+        </p>
+
+    <dt>Asynchronous support</dt>
+    <dd><p>Somewhat late to the party, programming languages are adding 'async' features (e.g.
+        <a href="https://docs.python.org/3/library/asyncio.html">Python</a>) that assist in handling inherently asynchronous sensor
+        data in a more efficient way both from the clarity of the programming and the efficiency of the code. The core of the
+        Adaptive City Platform is implemented with <a href="https://www.youtube.com/watch?v=rvmRzDpZXGQ">Java/Vertx</a>.
+        </p>
+
+    <dt>Stream processing</td>
+    <dd><p>This is essentially what we are doing with <a href="https://vertx.io/">Eclipse Vertx</a>, which is a combination of asynchronous
+        programming support (in Java) with a data publish/subscribe mechanism called the EventBus.
+        <a href="http://storm.apache.org/">Apache Storm</a> and <a href="https://kafka.apache.org/">Apache Kafka</a> have gained
+        popular support in the past couple of years both of which have the 'real-time' characteristic that data is <i>pushed</i> through
+        the system. Beyond that common characteristic, the available 'stream processing' platforms differ significantly in their approach
+        particularly with regard to guaranteeing delivery of data and managing what is in effect a committed transaction log. For urban and
+        in-building sensor data processing it is helpful to have a lightweight but low-latency system, recognizing that sensor data is inherently
+        unreliable and in the event of a temporary outage it often preferable to start back up immediately with new incoming data rather than
+        delay that by pumping through older sensor readings which are now less important.
+        </p>
+</dl>
